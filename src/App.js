@@ -14,7 +14,7 @@ import './style.css';
 
 // due to distinguish between private and public routes this project has created `higher-order components` (HOCs) for both types of routes
 // <PrivateRoute> HOC:
-function PrivateRoute({component: Components, authenticated, ...rest}) {
+function PrivateRoute({component: Component, authenticated, ...rest}) {
     return (
         <Route
             {...rest}

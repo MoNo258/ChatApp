@@ -76,7 +76,6 @@ export default class Login extends Component {
                     <button onClick={this.googleSignIn} type='button' className='btn btn-danger mr-2'>
                         Sign in with Google
                     </button>
-                    <p>Or</p>
                     <button onClick={this.gitHubSignIn} className='btn btn-secondary'>
                         Sign in with GitHub
                     </button>

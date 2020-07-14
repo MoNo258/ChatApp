@@ -1,6 +1,11 @@
-import firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/database';
+// import firebase from 'firebase';
+// import 'firebase/auth';
+// import 'firebase/database';
+
+//below is result of warning message in DevTools
+const firebase = require('firebase/app');
+require('firebase/auth');
+require('firebase/database');
 
 const firebaseConfig = {
     apiKey: "AIzaSyDXa0fgtPdooYjor8GB3xIVD_HZyxKBftU",
