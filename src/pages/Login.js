@@ -12,6 +12,8 @@ export default class Login extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.googleSignIn = this.googleSignIn.bind(this);
+        this.gitHubSignIn = this.gitHubSignIn.bind(this);
     }
 
     handleChange(event) {
@@ -27,6 +29,22 @@ export default class Login extends Component {
             await login(this.state.email, this.state.password);
         } catch (error) {
             this.setState({error: error.message});
+        }
+    }
+
+    async googleSignIn() {
+        try {
+            await signInWithGoogle();
+        } catch (error) {
+            this.setState({error: error.message});
+        }
+    }
+
+    async gitHubSignIn() {
+        try {
+            await signInWithGitHub();
+        } catch (error) {
+            this.setState({ error: error.message});
         }
     }
 
@@ -58,6 +76,14 @@ export default class Login extends Component {
                     <p>
                         Don't have an account yet? <Link to='/signup'>Sign up</Link>
                     </p>
+                    <p>Or</p>
+                    <button onClick={this.googleSignIn} type='button'>
+                        Sign in with Google
+                    </button>
+                    <p>Or</p>
+                    <button onClick={this.gitHubSignIn} >
+                        Sign in with GitHub
+                    </button>
                 </form>
             </div>
         );
