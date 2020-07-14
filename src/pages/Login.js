@@ -44,46 +44,46 @@ export default class Login extends Component {
         try {
             await signInWithGitHub();
         } catch (error) {
-            this.setState({ error: error.message});
+            this.setState({error: error.message});
         }
     }
 
     render() {
         return (
-            <div>
-                <form autoComplete='off' onSubmit={this.handleSubmit}>
+            <div className='container'>
+                <form autoComplete='off' onSubmit={this.handleSubmit} className='mt-5 py-5 px-5'>
                     <h1>
-                        Login to <Link to='/'>ChatApp</Link>
+                        Login to <Link to='/' className='title ml-2'>ChatApp</Link>
                     </h1>
-                    <p>
+                    <p className='lead'>
                         Fill in the form to login to your account
                     </p>
-                    <div>
-                        {this.state.error ? <p>{this.state.error}</p> : null}
+                    <div className='form-group'>
+                        {this.state.error ? <p className='text-danger'>{this.state.error}</p> : null}
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <input type="email" placeholder='Email' name='email' value={this.state.email}
-                               onChange={this.handleChange}/>
+                               onChange={this.handleChange} className='form-control'/>
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <input type="password" placeholder='Password' name='password' value={this.state.password}
-                               onChange={this.handleChange}/>
+                               onChange={this.handleChange} className='form-control'/>
                     </div>
                     <div>
-                        <button type='submit'>Login</button>
+                        <button type='submit' className='btn btn-primary px-5'>Login</button>
                     </div>
+                    <p>Or</p>
+                    <button onClick={this.googleSignIn} type='button' className='btn btn-danger mr-2'>
+                        Sign in with Google
+                    </button>
+                    <p>Or</p>
+                    <button onClick={this.gitHubSignIn} className='btn btn-secondary'>
+                        Sign in with GitHub
+                    </button>
                     <hr/>
                     <p>
                         Don't have an account yet? <Link to='/signup'>Sign up</Link>
                     </p>
-                    <p>Or</p>
-                    <button onClick={this.googleSignIn} type='button'>
-                        Sign in with Google
-                    </button>
-                    <p>Or</p>
-                    <button onClick={this.gitHubSignIn} >
-                        Sign in with GitHub
-                    </button>
                 </form>
             </div>
         );
