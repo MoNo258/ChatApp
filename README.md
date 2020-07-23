@@ -3,6 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # ChatApp
 ChatApp is very simple chat where logged in user can post messages and check out posts of other users. Posts are ordered by timestamp.
 
+##Demo:
+## [ChatApp link](https://mono258.github.io/ChatApp)
+
 ## This project uses
 * create-react-app
 * React Router
