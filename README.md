@@ -1,13 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # ChatApp
 ChatApp is very simple chat where logged in user can post messages and check out posts of other users. Posts are ordered by timestamp.
 
-##Demo:
+## Demo:
 ## [ChatApp link](https://mono258.github.io/ChatApp)
 
 ## This project uses
-* create-react-app
+* create-react-app (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)
 * React Router
 * Firebase authentication (email/password; Google; GitHub)
 * Firebase realtime database
